@@ -109,4 +109,7 @@ Closures
 let cerealArray = ["Golden Grahams", "Cheerios", "Trix", "Cap'n Crunch OOPS! All Berries", "Cookie Crisp"]
 
 // Use a closure to sort this array alphabetically
-// WORK HERE
+
+var sortedCereals = cerealArray.sorted { $0.localizedCaseInsensitiveCompare ($1) == NSComparisonResult.OrderedAscending }
+sortedCereals
+
