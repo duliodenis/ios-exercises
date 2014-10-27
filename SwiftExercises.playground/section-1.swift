@@ -7,8 +7,8 @@ Strings
 */
 
 func favoriteCheeseStringWithCheese(cheese: String) -> String {
-    // WORK HERE
-    return cheese
+    var favoriteCheeseString = "My favorite cheese is \(cheese)."
+    return favoriteCheeseString
 }
 
 let fullSentence = favoriteCheeseStringWithCheese("cheddar")
@@ -22,11 +22,13 @@ Arrays & Dictionaries
 
 let numberArray = [1, 2, 3, 4]
 // Add 5 to this array
-// WORK HERE
+numberArray + [5]
 
 let numberDictionary = [1 : "one", 2 : "two", 3 : "three", 4 : "four"]
 // Add 5 : "five" to this dictionary
-// WORK HERE
+var newNumberDictionary = numberDictionary
+newNumberDictionary[5] = "five"
+println(newNumberDictionary)
 
 /*
 
@@ -35,10 +37,15 @@ Loops
 */
 
 // Use a closed range loop to print 1 - 10, inclusively
-// WORK HERE
+for i in 1...10 {
+    print("\(i) ")
+}
 
 // Use a half-closed range loop to print 1 - 10, inclusively
-// WORK HERE
+for i in 1..<11 {
+    print("\(i) ")
+}
+
 
 let worf = [
     "name": "Worf",
@@ -57,8 +64,11 @@ let characters = [worf, picard]
 
 func favoriteDrinksArrayForCharacters(characters:Array<Dictionary<String, String>>) -> Array<String> {
     // return an array of favorite drinks, like ["prune juice", "tea, Earl Grey, hot"]
-    // WORK HERE
-    return []
+    var favoriteDrinks = [String]()
+    for i in 0...1 {
+        favoriteDrinks.append(characters[i]["favorite drink"]!)
+    }
+    return favoriteDrinks
 }
 
 let favoriteDrinks = favoriteDrinksArrayForCharacters(characters)
@@ -76,8 +86,19 @@ Functions
 let strings = ["milk", "eggs", "bread", "challah"]
 
 // WORK HERE - make your function and pass `strings` in
+func semicolonSeperated(groceries:Array<String>) -> String {
+    var returnString = groceries[0]
+    for item in groceries {
+        if item != groceries[0] {
+            returnString = returnString + ";" + item
+        }
+    }
+    return returnString
+}
 
 let expectedOutput = "milk;eggs;bread;challah"
+println(semicolonSeperated(strings))
+
 
 /*
 
